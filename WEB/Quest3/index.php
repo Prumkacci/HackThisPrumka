@@ -16,10 +16,10 @@
           <div>Bezpečný Jarda si tuto stránku zabezpečil pomocí hesla v souboru. Tentokrát ho dokonce nahrál.</div>
             <b>Heslo:</b>
             <?php
-              echo "<br><form action=\"/WEB/Quest3/index.php\" method=\"post\">
+              echo "<br><form action=\"/HackThisPrumka/WEB/Quest3/index.php\" method=\"post\">
                 <input type=\"password\" name=\"password\" value = \"\"><br><br>
                 <input type=\"submit\" value=\"Odeslat\"></form>";           
-            if ( isset($_POST["password"]) && $_POST["password"] == file_get_contents("pass.txt"))
+            if ( isset($_POST["password"]) && $_POST["password"] == file_get_contents("heslo"))
             {
               echo "<b>Gratuluji Dokončil jsi úkol 3.<b>";
             }

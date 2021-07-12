@@ -19,7 +19,7 @@
             use PHPMailer\PHPMailer\SMTP;
             use PHPMailer\PHPMailer\Exception;
 
-            require 'C:\Users\novo\vendor\autoload.php';
+            require 'C:\xampp\htdocs\HackThisPrumka\WEB\vendor\autoload.php';
 
             $heslo4 = "Jarmilka15,4876";
               echo"<br><form action='/HackThisPrumka/WEB/Quest4/index.php' method='post'>

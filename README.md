@@ -1,1 +1,3 @@
 # HackThisPrumka
+
+Školní projekt.
