@@ -7,9 +7,10 @@
     <meta name='keywords' content='Quest'>
     <meta name='author' content='Ondřej Novotný'>
     <meta name='robots' content='all'>
-    <link rel="style" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <!-- <meta http-equiv='X-UA-Compatible' content='IE=edge'> -->
     <link href='/favicon.png' rel='shortcut icon' type='image/png'>
+
   </head>
     <body>
         <center>
