@@ -38,7 +38,7 @@
             <?php
             $heslo1 = "frea4578";
              
-            echo "<br><form action=\"/HackThisPrumka/WEB/Quest1/index.php\" method=\"post\">
+            echo "<br><form action=\"/HackThisPrumka/Quest1/index.php\" method=\"post\">
                 <input type=\"password\" name=\"password\" value = \"\"><br><br>
                 <input type=\"submit\" value=\"Odeslat\"></form>
                 <!-- Heslo je: " . $heslo1 . " -->";

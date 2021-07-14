@@ -17,7 +17,7 @@
             <b>Heslo:</b>
             <?php
             $heslo2 = "";
-              echo "<br><form action=\"/HackThisPrumka/WEB/Quest2/index.php\" method=\"post\">
+              echo "<br><form action=\"/HackThisPrumka/Quest2/index.php\" method=\"post\">
                 <input type=\"password\" name=\"password\" value = \"\"><br><br>
                 <input type=\"submit\" value=\"Odeslat\"></form>";           
             if ( isset($_POST["password"]) && $_POST["password"] == $heslo2)

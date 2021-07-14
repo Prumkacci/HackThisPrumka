@@ -29,7 +29,7 @@
           echo "<div>Bezpečný Jarda si heslo zašifroval. bohužel veřejně dostupným šifrovačem. Podařilo se ti dostat heslo v zašifrované podobě " . sifra($heslo5) . "</div>";
             
 
-            echo "<br/><b>Šifrovací engine<b><br><form action=\"/HackThisPrumka/WEB/Quest5/index.php\" method=\"post\">
+            echo "<br/><b>Šifrovací engine<b><br><form action=\"/HackThisPrumka/Quest5/index.php\" method=\"post\">
                 <input type=\"text\" name=\"text\"><br><br>
                 <input type=\"submit\" value=\"Odeslat\"></form>";
 
@@ -38,7 +38,7 @@
               echo "<br>Tvoje šifra je " . sifra($_POST["text"]);
               }
 
-              echo "<br><br><b>Heslo:</b> <br><form action=\"/HackThisPrumka/WEB/Quest5/index.php\" method=\"post\">
+              echo "<br><br><b>Heslo:</b> <br><form action=\"/HackThisPrumka/Quest5/index.php\" method=\"post\">
                 <input type=\"password\" name=\"password\" value = \"\"><br><br>
                 <input type=\"submit\" value=\"Odeslat\"></form>";           
             if ( isset($_POST["password"]) && $_POST["password"] == $heslo5)

@@ -19,14 +19,14 @@
             use PHPMailer\PHPMailer\SMTP;
             use PHPMailer\PHPMailer\Exception;
 
-            require 'C:\xampp\htdocs\HackThisPrumka\WEB\vendor\autoload.php';
+            require '/var/www/html/vendor/autoload.php';
 
             $heslo4 = "Jarmilka15,4876";
-              echo"<br><form action='/HackThisPrumka/WEB/Quest4/index.php' method='post'>
+              echo"<br><form action='/HackThisPrumka/Quest4/index.php' method='post'>
                    <input type='hidden' name='komu' value='bezpecnyj.itb18@vsps-su.cz'>
                    <input type='submit' value='Odeslat Heslo Jardovi'><br><br>";
               echo "<b>Heslo:</b>
-                    <br><form action=\"/HackThisPrumka/WEB/Quest4/index.php\" method=\"post\">
+                    <br><form action=\"/HackThisPrumka/Quest4/index.php\" method=\"post\">
                     <input type=\"password\" name=\"password\" value = \"\"><br><br>
                     <input type=\"submit\" value=\"Odeslat\"></form>";           
             if ( isset($_POST["password"]) && $_POST["password"] == "$heslo4")
