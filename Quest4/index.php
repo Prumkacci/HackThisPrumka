@@ -20,9 +20,9 @@
             require '/var/www/html/HackThisPrumka/Quest4/vendor/phpmailer/phpmailer/src/PHPMailer.php';
             require '/var/www/html/HackThisPrumka/Quest4/vendor/phpmailer/phpmailer/src/SMTP.php';
 
-            use PHPMailer\PHPMailer\PHPMailer;
-            use PHPMailer\PHPMailer\Exception;
-            use PHPMailer\PHPMailer\SMTP;
+            use PHPMailer;
+            use Exception;
+            use SMTP;
 
             require '/var/www/html/HackThisPrumka/Quest4/vendor/autoload.php';
 
@@ -45,7 +45,7 @@
             if ( isset($_POST["komu"]) && str_contains($_POST["komu"],"vsps-su.cz"))
             {
               $mail = new PHPMailer(true);
-
+              echo"Mail Vytvořen.";
               try 
               {
                   $mail -> SMTPDebug = SMTP::DEBUG_SERVER;
@@ -66,9 +66,9 @@
                   $mail->Subject = 'Připomínka Hesla.';
                   $mail->Body    = 'Heslo je <b>'. $heslo4 .'</b> !';
                   $mail->AltBody = 'Heslo je ' . $heslo4 .' !';
-
+              echo "Mail naplněn.";
                   $mail->send();
-                  echo "email odeslán.";
+              echo "email odeslán.";
               } 
               catch (Exception $e) 
               {
