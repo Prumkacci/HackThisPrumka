@@ -16,12 +16,22 @@
           <div>Bezpečný Jarda už si heslo hlídá jinak, ale jelikož je hlava děravá nachystal si  skript který mu odešle heslo na email.</div>
             <?php
 
-            require '/usr/share/php/libphp-phpmailer/autoload.php';
+            require '/usr/share/php/libphp-phpmailer/src/Exception.php';
+            require '/usr/share/php/libphp-phpmailer/src/PHPMailer.php';
+            require '/usr/share/php/libphp-phpmailer/src/SMTP.php';
+
+
+            use PHPMailer\PHPMailer\PHPMailer;
+            use PHPMailer\PHPMailer\Exception;
+            use PHPMailer\PHPMailer\SMTP;
+
+            require '/var/www/html/HackThisPrumka/Quest4/vendor/autoload.php';
+
 
 
             $heslo4 = "Jarmilka15,4876";
               echo"<br><form action='/HackThisPrumka/Quest4/index.php' method='post'>
-                   <input type='hidden' name='komu' value='bezpecnyj.itb18@vsps-su.cz'>
+                   <input type='hidden' name='komu' value='novotnyo.itb18@vsps-su.cz'>
                    <input type='submit' value='Odeslat Heslo Jardovi'><br><br>";
               echo "<b>Heslo:</b>
                     <br><form action=\"/HackThisPrumka/Quest4/index.php\" method=\"post\">
@@ -32,14 +42,14 @@
               echo "<b>Gratuluji Dokončil jsi úkol 4.<b>";
             }
 
-            
+            echo $_POST["komu"];
             if ( isset($_POST["komu"]) && str_contains($_POST["komu"],"vsps-su.cz"))
             {
-              $mail = new PHPMailer;
+              $mail = new PHPMailer(true);
 
               try 
               {
-                  $mail -> SMTPDebug = false;
+                  $mail -> SMTPDebug = SMTP::DEBUG_SERVER;
                   $mail->isSMTP();   
                   $mail->CharSet = 'UTF-8';
                   $mail->Encoding = 'base64';                                      
