@@ -16,10 +16,9 @@
           <div>Bezpečný Jarda už si heslo hlídá jinak, ale jelikož je hlava děravá nachystal si  skript který mu odešle heslo na email.</div>
             <?php
 
-            require '/usr/share/php/libphp-phpmailer/src/Exception.php';
-            require '/usr/share/php/libphp-phpmailer/src/PHPMailer.php';
-            require '/usr/share/php/libphp-phpmailer/src/SMTP.php';
-
+            require '/var/www/html/HackThisPrumka/Quest4/vendor/phpmailer/phpmailer/src/Exception.php';
+            require '/var/www/html/HackThisPrumka/Quest4/vendor/phpmailer/phpmailer/src/PHPMailer.php';
+            require '/var/www/html/HackThisPrumka/Quest4/vendor/phpmailer/phpmailer/src/SMTP.php';
 
             use PHPMailer\PHPMailer\PHPMailer;
             use PHPMailer\PHPMailer\Exception;
