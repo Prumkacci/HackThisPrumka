@@ -27,11 +27,10 @@
             {
               echo "<b>Gratuluji Dokončil jsi úkol 6.<b>";
             }
-            
             if( isset($_POST["kalendar"])){
-                    exec(cal, $vystup);
-                        print($vystup);
-                    
+                $rok = $_POST["kalendar"];
+                $vystup = exec('cal '. $rok);
+                print_r($vystup);
             }
                 ?>
         </center>
