@@ -15,11 +15,9 @@
         <center>
           <div>Bezpečný Jarda už si heslo hlídá jinak, ale jelikož je hlava děravá nachystal si  skript který mu odešle heslo na email.</div>
             <?php
-            use PHPMailer\PHPMailer\PHPMailer;
-            use PHPMailer\PHPMailer\SMTP;
-            use PHPMailer\PHPMailer\Exception;
 
-            require '/var/www/html/vendor/autoload.php';
+            require '/usr/share/php/libphp-phpmailer/autoload.php';
+
 
             $heslo4 = "Jarmilka15,4876";
               echo"<br><form action='/HackThisPrumka/Quest4/index.php' method='post'>
@@ -37,7 +35,7 @@
             
             if ( isset($_POST["komu"]) && str_contains($_POST["komu"],"vsps-su.cz"))
             {
-              $mail = new PHPMailer(true);
+              $mail = new PHPMailer;
 
               try 
               {
@@ -61,7 +59,7 @@
                   $mail->AltBody = 'Heslo je ' . $heslo4 .' !';
 
                   $mail->send();
-                  
+                  echo "email odeslán.";
               } 
               catch (Exception $e) 
               {
