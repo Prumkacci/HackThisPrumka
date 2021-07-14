@@ -7,9 +7,15 @@
     <meta name='keywords' content='Quest'>
     <meta name='author' content='Ondřej Novotný'>
     <meta name='robots' content='all'>
+<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="./style.css">
     <!-- <meta http-equiv='X-UA-Compatible' content='IE=edge'> -->
     <link rel="stylesheet" href="index.css?v=<?php echo time(); ?>">
+=======
+    <link rel="stylesheet" href="style.css">
+    <!-- <meta http-equiv='X-UA-Compatible' content='IE=edge'> -->
+    <link href='/favicon.png' rel='shortcut icon' type='image/png'>
+>>>>>>> 5115217ccad0db89b6df03b2cfac5c078498197b
 
   </head>
     <body>
