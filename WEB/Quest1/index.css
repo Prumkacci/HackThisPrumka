@@ -1,0 +1,111 @@
+/* Nintendoid font from https://www.splintered.co.uk/experiments/132/ */
+
+@font-face {
+  font-family: Arial;
+  
+  font-weight: 400;
+  
+}
+
+body {background-color:#111;}
+
+div { background: #111;
+       padding: 1em;
+       font-family: Arial;
+       color: #eee;
+       font-size: 1em;
+       line-height: 1;
+       text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
+       letter-spacing: 0.125em;
+       animation-duration: 0.01s;
+       animation-name: textflicker;
+       animation-iteration-count: infinite;
+       animation-direction: alternate;
+}
+div { font-size: 5em; }
+
+@keyframes textflicker {
+  from {
+    text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+  }
+  to {
+    text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+  }
+}
+
+
+
+#wrapper{
+	display: block;
+	margin-bottom: 100px;
+}
+
+
+
+#madeby{
+	color: #666;
+	text-decoration: none;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+}
+
+#madeby:after{
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 100%;
+	top: 0;
+	right: 0;
+	padding-bottom: 5px;
+	border-bottom: 1.5px solid #777;
+	transition: color 0.3s ease;
+	transition: 0.3s width ease;
+}
+#madeby:hover:after{
+	left: 0;
+	width: 100%;
+	transition: 0.3s width ease;
+}
+#madeby:hover{
+	color: #777;
+	transition: color 0.3s ease;
+}
+
+.button{
+	font-family: Arial;
+    text-decoration: none;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	position: relative;
+	padding: 10px;
+}
+
+
+a.button.ten{
+	color: rgb(8, 65, 6);
+    font-family: Arial;
+}
+a.button.ten:after{
+	font-family: Arial;
+    content: 'Jsi si jistý ?';
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	color: white;
+	transform: translate(-20px, -20px);
+	transition: all 0.2s ease;
+	opacity: 0;
+}
+
+a.button.ten:hover:after{
+	transform: translate(0px, 0px);
+	opacity: 1;
+	transition: all 0.2s ease;
+}
+
+
+
