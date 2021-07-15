@@ -10,9 +10,7 @@
             use PHPMailer\PHPMailer\OAuth;
 
             require '/var/www/html/HackThisPrumka/Quest4/vendor/autoload.php';
-echo "1";
             $mail = new PHPMailer;
-echo "2";
               try 
               {
                   $mail -> SMTPDebug = SMTP::DEBUG_SERVER;
