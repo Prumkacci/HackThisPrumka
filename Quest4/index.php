@@ -16,15 +16,17 @@
           <div>Bezpečný Jarda už si heslo hlídá jinak, ale jelikož je hlava děravá nachystal si  skript který mu odešle heslo na email.</div>
             <?php
 
-            require '/var/www/html/HackThisPrumka/Quest4/vendor/phpmailer/phpmailer/src/Exception.php';
-            require '/var/www/html/HackThisPrumka/Quest4/vendor/phpmailer/phpmailer/src/PHPMailer.php';
-            require '/var/www/html/HackThisPrumka/Quest4/vendor/phpmailer/phpmailer/src/SMTP.php';
+require '/var/www/html/HackThisPrumka/Quest4/vendor/phpmailer/phpmailer/src/Exception.php';
+require '/var/www/html/HackThisPrumka/Quest4/vendor/phpmailer/phpmailer/src/PHPMailer.php';
+require '/var/www/html/HackThisPrumka/Quest4/vendor/phpmailer/phpmailer/src/SMTP.php';
+require '/var/www/html/HackThisPrumka/Quest4/vendor/phpmailer/phpmailer/src/OAuth.php';
 
-            use PHPMailer;
-            use Exception;
-            use SMTP;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\OAuth;
 
-            require '/var/www/html/HackThisPrumka/Quest4/vendor/autoload.php';
+require '/var/www/html/HackThisPrumka/Quest4/vendor/autoload.php';
 
 
 
@@ -41,11 +43,12 @@
               echo "<b>Gratuluji Dokončil jsi úkol 4.<b>";
             }
 
-            echo $_POST["komu"];
+            
             if ( isset($_POST["komu"]) && str_contains($_POST["komu"],"vsps-su.cz"))
             {
-              $mail = new PHPMailer(true);
-              echo"Mail Vytvořen.";
+              
+              $mail = new PHPMailer;
+              
               try 
               {
                   $mail -> SMTPDebug = SMTP::DEBUG_SERVER;
@@ -75,7 +78,7 @@
                   echo "Zpráva nebyla odeslána. Mailer Error: {$mail->ErrorInfo}";
               }
             }
-            Else{
+            else if(isset($_POST["komu"])){
               echo "Email Neobsahuje vhodnou doménu.";
             }  
                 ?>
