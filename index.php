@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang='cs'>
   <head>
-    <title>Quest No. 2</title>
+    <title>Hlavní menu</title>
     <meta charset='utf-8'>
-    <meta name='description' content='úkol 2'>
+    <meta name='description' content='Hlavní menu'>
     <meta name='keywords' content='Quest'>
     <meta name='author' content='Ondřej Novotný'>
     <meta name='robots' content='all'>
