@@ -1,0 +1,7 @@
+<?php 
+session_name("users"); 
+session_start(); 
+$_SESSION=array(); 
+session_destroy(); 
+header("location:index.php"); 
+?>

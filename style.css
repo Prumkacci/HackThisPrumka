@@ -1,0 +1,20 @@
+.reg_a {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .reg_a1 {
+    margin: 0;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+td{
+  width: 100px;
+  text-align:center;
+  border:1px solid;
+  
+  }
