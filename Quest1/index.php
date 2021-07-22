@@ -18,35 +18,56 @@
   </head>
     <body>
         
-    <center>
-         <div class="nadpis">V tomto úkolu jde o úplný základ HTML. Hodně štěstí </div>
-          
+    
+
+
+
+
             
-         <span id="wrapper">
-
-
-	
-<a href="https://www.w3schools.com/html/html_intro.asp" target="_blank"  class="button ten">Pro neznalé.</a>
-	
-
-</span>   
-
-
-</div>
-            
-          <b>Heslo:</b>
             <?php
             $heslo1 = "frea4578";
+            
+            
+            ob_start(); echo "<center>
+            <div class='nadpis'>V tomto úkolu jde o úplný základ HTML. <br> Hodně štěstí </br> </div>
              
-            echo "<br><form action=\"/HackThisPrumka/Quest1/index.php\" method=\"post\">
-                <input type=\"password\" name=\"password\" value = \"\"><br><br>
-                <input type=\"submit\" value=\"Odeslat\"></form>
-                <!-- Heslo je: " . $heslo1 . " -->";
+               
+            
+   
+   
+   
+   
+       <div class='link-7'>
+           <a href='https://www.w3schools.com/html/' target='_blank'>
+             <span class='thin'>Pro </span><span class='thick'>nováčky</span>
+           </a>
+         </div>
+       
+     
+   
+   
+   
+   
+   </div class='nadpis'>
+            
+            <div class='psani'>
+  <h1>HESLO</h1>
+</div>
+  
+            <br><form action=\"/HackThisPrumka/Quest1/index.php\" method=\"post\">
+            <div class ='heslo'> <input type=\"password\" name=\"password\" value = \"\"><br><br> </div class='heslo'>
+               <div class='tlacitko'> <input type=\"submit\" value=\"Odeslat\"></form> </div class ='tlacitko'>
+                <!-- Heslo je: " . $heslo1 . " --> ";
               
             
             if ( isset($_POST["password"]) && $_POST["password"] == $heslo1)
             {
-              echo "<h1>Gratuluji Dokončil jsi úkol 1.<h1>";
+              
+              ob_end_clean(); echo "<div class='screen'>
+              <p> GRATULUJI ! <br> DOKONČIL JSI 1. ÚKOL, JEN TAK DÁLE.. </br></p>
+              
+              ";
+                          
             }
                 ?>
           
