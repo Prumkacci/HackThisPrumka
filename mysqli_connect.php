@@ -1,5 +1,5 @@
 <?php
-$link = mysqli_connect('server', 'login', 'password', 'dbname');
+$link = mysqli_connect('localhost', 'nov', 'Ondra2580,', 'HackThisPrumka');
 
 if (!$link) {
     die('Connect Error (' . mysqli_connect_errno() . ') '
