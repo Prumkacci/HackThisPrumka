@@ -8,4 +8,9 @@ session_start();
   <link rel="stylesheet" href="style.css">
   <title><?php $title ?></title>
 </head>
-<body>
+  <body>
+    <center>
+    <b>HackThisPrumka</b>
+</center>
+  </body>
+</html>

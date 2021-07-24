@@ -20,9 +20,9 @@ include "header.php";
   header ("location:user.php");   
   }
   else{
+    include "prihlaseni.php";
       echo "
-      <a class='reg_a' href='registrace.php'>Zaregistruj se</a>
-      <a class='reg_a1' href='prihlaseni.php'>Přihlaš se</a>"; 
+      <a class='reg_a' href='registrace.php'>Zaregistruj se</a>"; 
   }
 
 

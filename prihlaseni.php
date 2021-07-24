@@ -1,12 +1,11 @@
 <?php
 $title="Přihlášení"; 
-include ("header.php"); 
 ?> 
 
 <p style="font-weight:bold; font-size:16px">Přihlášení</p> <br>  
 
 <form action="login.php" method="POST">   
-<table align="center" style="font-size:12px">    
+<table style="font-size:12px">    
 <tr><td>Username: </td><td><input type="text" name="username"></td></tr> 
 <tr><td>Heslo: </td><td><input type="password" name="password"></td></tr>     
 <tr><td colspan="2" align="right"><input type="submit" name="submit" value="Přihlásit"></td></tr> 
@@ -18,8 +17,7 @@ include ("header.php");
   header ("location:user.php");   
   }
   else{
-      echo "
-      <a class='reg_a' href='registrace.php'>Zaregistruj se</a>";
+  
       
   }
 

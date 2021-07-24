@@ -41,7 +41,7 @@ echo "Registrace byla úspěšná <br>";
 $sql="INSERT INTO users (username,password,email) VALUES('$username',sha1(md5('$password')),'$email')";
 if(mysqli_query($link,$sql)){
 echo "Vaše registrace proběhla v pořádku. Můžete se
-<a href='prihlaseni.php'>přihlásit</a>.";
+<a href='index.php'>přihlásit</a>.";
 }
 else{
 echo mysqli_error($link);
@@ -73,7 +73,7 @@ else {
   }
   else{
       echo "
-      <a class='reg_a1' href='prihlaseni.php'>Přihlaš se</a>"; 
+      <a class='reg_a1' href='index.php'>Přihlaš se</a>"; 
   }
 include ("footer.php")
 ?>
