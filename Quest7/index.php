@@ -7,29 +7,46 @@
     <meta name='keywords' content='Quest'>
     <meta name='author' content='Ondřej Novotný'>
     <meta name='robots' content='all'>
-    <link rel="style" href="style.css">
+    <link rel="stylesheet" href="index.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="style.css">
     <!-- <meta http-equiv='X-UA-Compatible' content='IE=edge'> -->
     <link href='/favicon.png' rel='shortcut icon' type='image/png'>
   </head>
     <body>
-        <center>
-          <div>Bezpečný Jarda si heslo hlídá v souboru. Ale protože je zdatný Ajťák udělal si v php skript co vypisuje délku jména.</div>
+    <?php
+    ob_start(); echo "<center>
+    <div class='nadpis'> <h1> Jarda si heslo hlídá v souboru. Ale protože je zdatný Ajťák udělal si v php skript co vypisuje délku jména.</h1> </div>
             
-            <?php
-            echo "<br/><b>Vložte jméno:</b>";
-                 echo "<form action=\"/HackThisPrumka/Quest7/jmeno.php\" method=\"post\">
-                 <input type=\"text\" name=\"jmeno\" value = \"\"><br><br>
-                 <input type=\"submit\" value=\"Odeslat\"></form></br>"; 
+            
+                 <div class='psani'> <h1>Vložte jméno: </h1> </div>
+                 <form action=\"/HackThisPrumka/Quest7/jmeno.php\" method=\"post\">
+                 <div class ='jmeno'> <input type=\"text\" name=\"jmeno\" value = \"\" placeholder=\"Jméno\"><br><br> </div class='jmeno'>
+                 <div class='tlacitko'> <input type=\"submit\" value=\"Odeslat\"></form></br> </div>
 
 
                  
-              echo "<b>Heslo:</b> <br><form action=\"/HackThisPrumka/Quest7/index.php\" method=\"post\">
-                <input type=\"password\" name=\"password\" value = \"\"><br><br>
-                <input type=\"submit\" value=\"Odeslat\"></form>"; 
+                <div class='psani'> <h1>PŘIHLÁŠENÍ</h1> <br><form action=\"/HackThisPrumka/Quest7/index.php\" method=\"post\">
+                <div class ='jmeno'> <label for='jmeno'> Jméno:</label> <br> <input type=\"text\" name=\"jmeno\" value = \"Admin\" placeholder=\"Jméno\"><br><br> </div class='jmeno'> 
+                <div class ='heslo'> <label for='password'> Heslo:</label> <br> <input type=\"password\" name=\"password\" value = \"\" placeholder=\"Heslo\"><br><br> </div class='heslo'>
+                <div class='tlacitko'> <center> <input type=\"submit\" value=\"Odeslat\"> </center> </form> </div class ='tlacitko'>"; 
                 
                 if ( isset($_POST["password"]) && $_POST["password"] == file_get_contents("akjsdkjandkjh4a64s7a6.txt"))
             {
-              echo "<b>Gratuluji Dokončil jsi úkol 7.<b>";
+              ob_end_clean(); echo"<div class='confetti'>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+          </div> <h2> Gratuluji, dokončil jsi úkol číslo 7!</h2>";
             }
                 ?>
         </center>

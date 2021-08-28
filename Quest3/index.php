@@ -15,7 +15,7 @@
     <body>
       <?php
     ob_start(); echo "<center>
-          <div class='nadpis'>Bezpečný Jarda si tuto stránku zabezpečil pomocí hesla v souboru. Tentokrát ho dokonce nahrál.</div>
+          <div class='nadpis'>Opatrný Jarouš si tuto stránku zabezpečil pomocí hesla v souboru. Tentokrát ho dokonce nahrál.</div>
           </center> <div class='psani'> <h1>PŘIHLÁŠENÍ</h1> </div>
             
                 <br><form action=\"/HackThisPrumka/Quest3/index.php\" method=\"post\">

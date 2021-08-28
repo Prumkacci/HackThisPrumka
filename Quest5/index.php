@@ -28,7 +28,7 @@
 
     ob_start(); echo "<center> 
 
-           <div class='nadpis'> <h1>Bezpečný Jarda si heslo zašifroval. bohužel veřejně dostupným šifrovačem. Podařilo se ti dostat heslo v zašifrované podobě <br/><u>" . sifra($heslo5) . "</u></h1> </div>
+           <div class='nadpis'> <h1>Bezpečný Jaroušek si heslo zašifroval. bohužel veřejně dostupným šifrovačem. Podařilo se ti dostat heslo v zašifrované podobě <br/><u>" . sifra($heslo5) . "</u></h1> </div>
            
 
                 <div class='psani'> <h1>Šifrovací engine</h1> </div> 

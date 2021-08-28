@@ -16,7 +16,7 @@
     <?php
     $heslo4 = "Jarmilka154876";
     ob_start(); echo "<center>
-    <div class='nadpis'> <h1>Bezpečný Jarda už si heslo hlídá jinak, ale jelikož je hlava děravá nachystal si  skript který mu odešle heslo na email.</h1> </div>
+    <div class='nadpis'> <h1>Již velmi Jarda už si heslo hlídá jinak, ale jelikož je hlava děravá nachystal si  skript který mu odešle heslo na email.</h1> </div>
             
 
               
