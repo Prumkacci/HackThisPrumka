@@ -7,13 +7,13 @@
   
 }
 
-body {background-color:#111;}
+body {background-color:rgb(163, 163, 163);}
 
-.nadpis { background: #111;
+.nadpis { background: rgb(163, 163, 163);
        padding: 1em;
        font-family: fantasy;
        color: #eee;
-	   font-size: ;
+	   
        line-height: 1;
        text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
        letter-spacing: 0.125em;
@@ -21,98 +21,38 @@ body {background-color:#111;}
        animation-name: textflicker;
        animation-iteration-count: infinite;
        animation-direction: alternate;
-}
-div { font-size: 60px; }
-
-   @keyframes textflicker {
-  from {
-    text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
-  }
-  to {
-    text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
- } 
-} 
+       font-size: 60px;
+      
+      }
+      @keyframes textflicker {
+        from {
+          text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+        }
+        to {
+          text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+       } 
+      } 
+     
 
 
 /* tlacitko */
 
-#wrapper{
-	display: block;
-	margin-bottom: 100px;
+.tlacitko input{
+  
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #000000;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-right: 167px;
 }
 
-
-
-#madeby{
-	color: #666;
-	text-decoration: none;
-	position: fixed;
-	bottom: 20px;
-	right: 20px;
-    
+.tlacitko input:hover {
+  background: #757575;
+  text-decoration: none;
 }
-
-
-#madeby:after{
-	content: '';
-	position: absolute;
-	width: 0;
-	height: 100%;
-	top: 0;
-	right: 0;
-	padding-bottom: 5px;
-	border-bottom: 1.5px solid #777;
-	transition: color 0.3s ease;
-	transition: 0.3s width ease;
-}
-
-#madeby:hover:after{
-	left: 0;
-	width: 100%;
-	transition: 0.3s width ease;
-}
-#madeby:hover{
-	color: #777;
-	transition: color 0.3s ease;
-}
-
-.button{
-	font-family: Arial;
-    text-decoration: none;
-	color: white;
-	font-weight: bold;
-	font-size: 20px;
-	position: relative;
-	padding: 10px;
-}
-
-
-
-
-a.button.ten{
-	color: rgb(30, 197, 24);
-    font-family: Arial;
-}
-a.button.ten:after{
-	font-family: Arial;
-    content: 'Jsi si jistý ?';
-	position: absolute;
-	top: 10px;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	color: white;
-	transform: translate(-20px, -20px);
-	transition: all 0.2s ease;
-	opacity: 0;
-}
-
-a.button.ten:hover:after{
-	transform: translate(0px, 0px);
-	opacity: 1;
-	transition: all 0.2s ease;
-}
-
 
 /* konec tlacitka */
 
@@ -121,143 +61,68 @@ a.button.ten:hover:after{
 
 .psani h1 {
   width: auto;
-  display: inline-block;
-  color: rgba(182, 176, 176, 0.726);
+  
+  color: rgb(255, 255, 255);
   font-family: monospace;
-  overflow: hidden; /* Odhalení textu */
-  border-right: .100px solid rgb(10, 182, 38); /* Kurzor */
+  position: relative;
+  padding-right: 1750px;
   white-space: nowrap; /* Nezalamování textu */
   margin: 0 auto; 
   letter-spacing: .10em; /* Mezera mezi písmenama */
-  animation: /* samotna animace */
-    typing 2.5s steps(40, end),
-    blink-caret .5s step-end infinite;
-font-size: 150px;
+font-size: 50px;
   }
 
 
-/* Psaní */
-@keyframes typing {
-  from {max-width: 0 }
-  to {max-width: 100% }
-}
 
-/* Kurzor */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: rgb(9, 170, 22) }
-}
 
-/* Input */
+
+
+
+/* Input heslo */
 
 .heslo input {
   padding: 5px;
-  font-size: 17px;
-  border-width: 3px;
-  border-color: #20d427;
-  background-color: #000000;
-  color: #ffffff;
+  font-size: 16px;
+  border-width: 1px;
+  border-color: #CCCCCC;
+  background-color: #FFFFFF;
+  color: #000000;
   border-style: solid;
-  border-radius: 21px;
-  box-shadow: 0px 0px 12px rgba(0,0,0,.75);
+  border-radius: 0px;
+  box-shadow: 0px 0px 5px rgba(66,66,66,.75);
   text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+  
 }
 .heslo input:focus {
   outline:none;
 }
 
-/* konec inputu */
 
 
-/* tlacitko */
-
-.tlacitko  {
-  
-  border: none;
-  outline: none;
-  color: rgb(255, 255, 255);
-  background: #111;
-  cursor: pointer;
-  position: relative;
-  z-index: 0;
-  border-radius: 10px;
-width: 400px;
+/* konec inputu heslo */
 
 
+/*input jmeno */
+
+.jmeno input {
+  padding: 5px;
+  font-size: 16px;
+  border-width: 1px;
+  border-color: #CCCCCC;
+  background-color: #FFFFFF;
+  color: #000000;
+  border-style: solid;
+  border-radius: 0px;
+  box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+  text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+}
+.jmeno input:focus {
+  outline:none;
 }
 
-.tlacitko:before {
-  content: "";
-  background: linear-gradient(
-    45deg,
-    hsl(113, 92%, 50%),
-    #13b42e,
-    #159e08,
-    #17720b,
-    #00ff00,
-    #0a920a,
-    #1ba845,
-    #04df0f,
-    #299707
-  );
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  background-size: 400%;
-  z-index: -1;
-  filter: blur(5px);
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  animation: glowingbn5 20s linear infinite;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  border-radius: 10px;
-}
+/* konec inputu jmena */
 
-@keyframes glowingbn5 {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 400% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
 
-.tlacitko:active {
-  color: #000;
-}
-
-.tlacitko:active:after {
-  background: transparent;
-}
-
-.tlacitko:hover:before {
-  opacity: 1;
-}
-
-.tlacitko:after {
-  z-index: -1;
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #191919;
-  left: 0;
-  top: 0;
-  border-radius: 10px;
-}
-
-.tlacitko input {
-  background: none;
-  color: rgb(255, 255, 255);
-  font-size: 50px;
-  border: none;
-}
-
-/* konec tlacitka */
 
 
 
@@ -269,7 +134,7 @@ width: 400px;
 a {
   text-transform: uppercase;
   font-size: 15px;
-  color: rgb(201, 201, 201);
+  color: rgb(255, 255, 255);
   text-decoration: none;
   position: relative;
   display: block;
@@ -290,7 +155,7 @@ a {
 
 .link-7 a:before {
   content: '';
-  border-bottom: solid 1px #06dd58;
+  border-bottom: solid 1px #000000;
   position: absolute;
   bottom: 0; left: 30%;
   width: 0;
@@ -302,7 +167,7 @@ a {
 }
 
 .link-7 a:hover:before {
-  border-bottom: solid thin #1bbb06;
+  border-bottom: solid thin #000000;
   width: 40%;
   -webkit-animation: heartbeat-x 1.7s infinite ease-in;
           animation: heartbeat-x 1.7s infinite ease-in;
@@ -347,7 +212,7 @@ a {
 
 /* KONFETY! */ 
 
- .confetti {
+.confetti {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -361,7 +226,7 @@ a {
   position: absolute;
   width: 10px;
   height: 30px;
-  background: #03be1c;
+  background: #ffd300;
   top: 0;
   opacity: 0;
 }
@@ -457,7 +322,7 @@ a {
   -webkit-animation-duration: 818ms;
 }
 .confetti-piece:nth-child(odd) {
-  background: #0ee707;
+  background: #7431e8;
 }
 .confetti-piece:nth-child(even) {
   z-index: 1;
@@ -474,7 +339,7 @@ a {
   -webkit-animation-delay: 1000ms;
 }
 .confetti-piece:nth-child(4n-7) {
-background: rgb(255, 255, 255);
+background: red;
 }
 @-webkit-keyframes makeItRain {
   from {opacity: 0;}
@@ -483,71 +348,27 @@ background: rgb(255, 255, 255);
 }
 
 
-.screen {
-  animation:colorPulse 5s infinite ease-in-out;
-  background-image:radial-gradient(#444, #111);
-  box-shadow:0 0 5vmin 1vmin #000 inset;
-  box-sizing:border-box;
-  font-family:'Fira Mono', monospace;
-  font-size:99px;
-  height:100vh;
-  overflow:hidden;
-  padding:10vmin;
-  width:100vw;
-text-align: center;
+/* konec konfetu */
+
+/* cely_formular */
+form {
+padding-right: 1750px;
+
 }
 
+label{
+color: white;
+font-family: Arial Black;
+font-style: bold;
 
-.screen:before {
-  animation:wave 10s infinite ease-in-out;
- 
 }
 
-.screen:after {
-  background-image:linear-gradient(transparent, transparent 3px, #222);
-  background-size:4px 4px;
-  bottom:0;
-  content:"";
-  left:0;
-  pointer-events:none;
-  position:absolute;
-  right:0;
-  top:0;
-  z-index:2;
-}
+/* jsi sikulka konec */
+h2 {text-align: center;
+padding-top: 450px;
+font-family: arial black;
 
 
-@keyframes colorPulse {
-  0%, 100% {
-    color:#0c0;
-  }
-  48%, 52% {
-    color:#090;
-  }
-  50% {
-    color:#060;
-  }
+
 }
 
-@keyframes wave {
-  0% {
-    box-shadow:0 -10vh 20vh #0c0;
-    top:-100vh;
-  }
-  48%, 52% {
-    box-shadow:0 -10vh 20vh #090;
-  }
-  50% {
-    box-shadow:0 -10vh 20vh #060;
-  }
-  100% {
-    box-shadow:0 -10vh 20vh #0c0;
-    top:200vh;
-  }
-}
-
-@keyframes blink {
-  50% {
-    opacity:0;
-  }
-}
