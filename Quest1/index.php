@@ -48,29 +48,45 @@
    
    
    
-   </div class='nadpis'>
-            
-            <div class='psani'>
-  <h1>HESLO</h1>
-</div>
   
+   </center>
+            <div class='psani'>
+  
+            <h1>PŘIHLÁŠENÍ</h1>
+</div>
+
             <br><form action=\"/HackThisPrumka/Quest1/index.php\" method=\"post\">
-            <div class ='heslo'> <input type=\"password\" name=\"password\" value = \"\"><br><br> </div class='heslo'>
-               <div class='tlacitko'> <input type=\"submit\" value=\"Odeslat\"></form> </div class ='tlacitko'>
+             <div class ='jmeno'> <label for='jmeno'> Jméno:</label> <br> <input type=\"text\" name=\"jmeno\" value = \"Admin\" placeholder=\"Jméno\"><br><br> </div class='jmeno'> 
+            
+             <div class ='heslo'> <label for='password'> Heslo:</label> <br> <input type=\"password\" name=\"password\" value = \"\" placeholder=\"Heslo\"><br><br> </div> 
+               <div class='tlacitko'> <center> <input type=\"submit\" value=\"Odeslat\"> </center> </form> </div class ='tlacitko'>
                 <!-- Heslo je: " . $heslo1 . " --> ";
               
             
             if ( isset($_POST["password"]) && $_POST["password"] == $heslo1)
             {
               
-              ob_end_clean(); echo "<div class='screen'>
-              <p> GRATULUJI ! <br> DOKONČIL JSI 1. ÚKOL, JEN TAK DÁLE.. </br></p>
+              ob_end_clean(); echo "<div class='confetti'>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+          </div> <h2> Gratuluji, dokončil jsi úkol číslo 1!</h2>
               
               ";
                           
             }
                 ?>
           
-        </center>
+        
     </body>
 </html>
