@@ -30,6 +30,16 @@
                 echo "Průmka je život.";
             }
 
+            echo "<br/><br/><b>Heslo:</b> <br><form action=\"/HackThisPrumka/Quest10/index.php\" method=\"post\">
+                <input type=\"password\" name=\"password\" value = \"\"><br><br>
+                <input type=\"submit\" value=\"Odeslat\"></form>"; 
+
+            if (isset($_POST["password"]) && $_POST["password"] == "ale není tady!")
+            {
+              echo "<b>Gratuluji Dokončil jsi úkol 10.<b>";
+            }
+            
+
         ?>
     </body>
 </html>

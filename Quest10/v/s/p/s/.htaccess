@@ -1,0 +1,4 @@
+IndexIgnore Odpoved* .htaccess
+<Files .htaccess>
+require all granted
+</Files>
