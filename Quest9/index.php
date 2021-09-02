@@ -20,16 +20,17 @@
                 <input type=\"password\" name=\"password\" value = \"\"><br><br>
                 <input type=\"submit\" value=\"Odeslat\"></form>"; 
             
-                if(!isset($_COOKIE[level9Auth])){
-                   setcookie("level9Auth", false, time()+(86400 * 30), "/");
-                   
+                if(!isset($_COOKIE["level9Auth"])){
+                  $cas = time() + (84600 * 30);
+                   setcookie("level9Auth", "false", $cas , "/", "", false, true);
+                  
                 }
 
-            if (isset($_POST["password"]) && isset($_COOKIE[$jmenoCookie]) && $_COOKIE[$jmenoCookie] == true)
+            if (isset($_POST["password"]) && isset($_COOKIE["level9Auth"]) && $_COOKIE["level9Auth"] == "true")
             {
               echo "<b>Gratuluji Dokončil jsi úkol 9.<b>";
             }
-            if(isset($_POST["password"]) && isset($_COOKIE[$jmenoCookie]) && $_COOKIE[$jmenoCookie] == false)
+            if(isset($_POST["password"]) && isset($_COOKIE["level9Auth"]) && $_COOKIE["level9Auth"] == "false")
             {
                 echo "nemáš přístup k těmto souborům";
             }
