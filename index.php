@@ -24,7 +24,7 @@ include "header.php";
       echo "
       <a class='reg_a' href='registrace.php'>Zaregistruj se</a>"; 
   }
-
+  include "levely.php";
 
 include "footer.php";
 ?>

@@ -15,6 +15,7 @@ include "header.php";
     <?php   
   if(isset($_SESSION['username'])){  
     echo "Přihlášen: <a href='user.php'>".$_SESSION['username']."</a> | <a href='logout.php'>Odhlásit</a>";
+    include "levely.php";
     
       }
       else{

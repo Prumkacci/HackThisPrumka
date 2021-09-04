@@ -59,7 +59,7 @@
                 use PHPMailer\PHPMailer\OAuth;
     
                 require '/var/www/html/HackThisPrumka/Quest4/vendor/autoload.php';
-    if (isset($_POST["komu"]))
+          if (isset($_POST["komu"]))
           {
                   $mail = new PHPMailer;
                   try 
@@ -83,11 +83,13 @@
                       $mail->Body    = 'Heslo je <b>'. $heslo4 .'</b> !';
                       $mail->AltBody = 'Heslo je ' . $heslo4 .' !';
                       $mail->send();
+                     
                   }
                   catch (Exception $e) 
                   {
                       echo "Zpráva nebyla odeslána. Mailer Error: {$mail->ErrorInfo}";
                   } 
+                  
           }
                 ?>
         </center>

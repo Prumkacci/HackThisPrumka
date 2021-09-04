@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang='cs'>
   <head>
@@ -19,14 +20,20 @@
     <body>
         
     
-
+    <?php
+session_name("users"); 
+session_start(); 
+date_default_timezone_set('UTC');
+?>
 
 
 
             
             <?php
             $heslo1 = "frea4578";
-            
+            if(!isset($_POST["password"])){
+              $_SESSION["cas2"] = date("His");
+            }
             
             ob_start(); echo "<center>
             <div class='nadpis'>V tomto úkolu jde o úplný základ HTML. <br> Hodně štěstí </br> </div>
@@ -65,7 +72,6 @@
             
             if ( isset($_POST["password"]) && $_POST["password"] == $heslo1)
             {
-              
               ob_end_clean(); echo "<div class='confetti'>
               <div class='confetti-piece'></div>
               <div class='confetti-piece'></div>
@@ -80,13 +86,71 @@
               <div class='confetti-piece'></div>
               <div class='confetti-piece'></div>
               <div class='confetti-piece'></div>
-          </div> <h2> Gratuluji, dokončil jsi úkol číslo 1!</h2>
-              
-              ";
-                          
+              </div> <h2> Gratuluji, dokončil jsi úkol číslo 1!</h2>";
+
+
+              $link = mysqli_connect('localhost', 'nov', 'Ondra2580,', 'HackThisPrumka');
+
+              if (!$link) {
+              echo "Chyba při připijení do db";
+              }
+
+              $sql='SELECT username FROM ukoly WHERE username ="'. $_SESSION['username'] . '"';
+            if($vysledek = mysqli_query($link,$sql))
+            {
+              if(mysqli_num_rows($vysledek)>0) 
+              {
+                $sql = 'SELECT ID,Basic1 FROM ukoly WHERE username = "'. $_SESSION['username'] . '"';
+                if($vysledek = mysqli_query($link,$sql))
+                {
+                  if(mysqli_num_rows($vysledek)>0) 
+                  {
+                    $Value = $vysledek->fetch_object();
+                    if($Value->Basic1 == NULL)
+                    {
+                      $cas1 = date("His");
+                      $cas = $cas1 - $_SESSION["cas2"];
+                      $casik = date("His", $cas);
+                      $uzivatel = $_SESSION["username"];
+                      $_SESSION["cas2"] = "";
+                      $sql = 'UPDATE ukoly SET Basic1 = ' .$casik. ' WHERE ID = ' . $Value->ID;
+                      if(mysqli_query($link,$sql))
+                      {
+                        echo "Postup Uložen.";
+                      }
+                      else
+                      {
+                        echo "Už si úkol dokončil.";
+                      }
+                    }
+                    else{
+                      echo "Už si úkol dokončil.";
+                    }
+                  }
+                }
+
+              }
+              else
+              {
+                  $cas1 = date("His");
+                  $cas = $cas1 - $_SESSION["cas2"];
+                  $casik = date("His", $cas);
+                  $uzivatel = $_SESSION["username"];
+                  $_SESSION["cas2"] = "";
+                  $sql = "INSERT INTO ukoly (username, Basic1) VALUES ('$uzivatel', $casik)";
+                if(mysqli_query($link,$sql))
+                {
+                  echo "Postup Uložen.";
+                }
+                else
+                {
+                  echo mysqli_error($link);
+                }
+              }
+            }
+
             }
                 ?>
-          
-        
+                       
     </body>
 </html>

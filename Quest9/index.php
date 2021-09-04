@@ -22,7 +22,7 @@
             
                 if(!isset($_COOKIE["level9Auth"])){
                   $cas = time() + (84600 * 30);
-                   setcookie("level9Auth", "false", $cas , "/", "", false, true);
+                   setcookie("level9Auth", "false", $cas , "/");
                   
                 }
 
