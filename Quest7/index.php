@@ -48,6 +48,65 @@
               <div class='confetti-piece'></div>
           </div> <h2> Gratuluji, dokončil jsi úkol číslo 7!</h2>";
             }
+            $link = mysqli_connect('localhost', 'nov', 'Ondra2580,', 'HackThisPrumka');
+
+            if (!$link) {
+            echo "Chyba při připijení do db";
+            }
+  
+            $sql='SELECT username FROM ukoly WHERE username ="'. $_SESSION['username'] . '"';
+          if($vysledek = mysqli_query($link,$sql))
+          {
+            if(mysqli_num_rows($vysledek)>0) 
+            {
+              $sql = 'SELECT ID,Basic7 FROM ukoly WHERE username = "'. $_SESSION['username'] . '"';
+              if($vysledek = mysqli_query($link,$sql))
+              {
+                if(mysqli_num_rows($vysledek)>0) 
+                {
+                  $Value = $vysledek->fetch_object();
+                  if($Value->Basic7 == NULL)
+                  {
+                    $cas1 = date("His");
+                    $cas = $cas1 - $_SESSION["cas2"];
+                    $casik = date("His", $cas);
+                    $uzivatel = $_SESSION["username"];
+                    $_SESSION["cas2"] = "";
+                    $sql = 'UPDATE ukoly SET Basic7 = ' .$casik. ' WHERE ID = ' . $Value->ID;
+                    if(mysqli_query($link,$sql))
+                    {
+                      echo "Postup Uložen.";
+                    }
+                    else
+                    {
+                      echo "Už si úkol dokončil.";
+                    }
+                  }
+                  else{
+                    echo "Už si úkol dokončil.";
+                  }
+                }
+              }
+  
+            }
+            else
+            {
+                $cas1 = date("His");
+                $cas = $cas1 - $_SESSION["cas2"];
+                $casik = date("His", $cas);
+                $uzivatel = $_SESSION["username"];
+                $_SESSION["cas2"] = "";
+                $sql = "INSERT INTO ukoly (username, Basic7) VALUES ('$uzivatel', $casik)";
+              if(mysqli_query($link,$sql))
+              {
+                echo "Postup Uložen.";
+              }
+              else
+              {
+                echo mysqli_error($link);
+              }
+            }
+          }
                 ?>
         </center>
     </body>
