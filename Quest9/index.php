@@ -7,27 +7,33 @@
     <meta name='keywords' content='Quest'>
     <meta name='author' content='Ondřej Novotný'>
     <meta name='robots' content='all'>
-    <link rel="style" href="style.css">
+    <link rel="stylesheet" href="index.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="style.css">
     <!-- <meta http-equiv='X-UA-Compatible' content='IE=edge'> -->
     <link href='/favicon.png' rel='shortcut icon' type='image/png'>
   </head>
     <body>
-        <center>
-          <div>Bezpečný Jarda zvolil zcela jiný přístup k skrytí věcí, zjištíš co a jak?</div>
-            
-          <?php
+    <?php
       session_name("users"); 
       session_start(); 
       date_default_timezone_set('UTC');
-    ?>
-
+    ?>    
+    
     <?php
-    if(!isset($_POST["password"])){
-      $_SESSION["cas2"] = date("His");
-    }
-              echo "<b>Heslo:</b> <br><form action=\"/HackThisPrumka/Quest9/index.php\" method=\"post\">
-                <input type=\"password\" name=\"password\" value = \"\"><br><br>
-                <input type=\"submit\" value=\"Odeslat\"></form>"; 
+
+if(!isset($_POST["password"])){
+  $_SESSION["cas2"] = date("His");
+}
+
+ob_start(); echo "<center> <div class='nadpis'> <h1>Bezpečný Jarda zvolil zcela jiný přístup ke skrytí věcí, zjištíš co a jak?</h1> </div>
+            
+          
+    
+   
+<div class='psani'> <h1>PŘIHLÁŠENÍ </h1> </div> <br><form action=\"/HackThisPrumka/Quest9/index.php\" method=\"post\">
+<div class ='jmeno'> <label for='jmeno'> Jméno:</label> <br> <input type=\"text\" name=\"jmeno\" value = \"Admin\" placeholder=\"Jméno\"><br><br> </div class='jmeno'> 
+<div class ='heslo'> <label for='password'> Heslo:</label> <br> <input type=\"password\" name=\"password\" value = \"\" placeholder=\"Heslo\"><br><br> </div class='heslo'>
+<div class='tlacitko'> <center> <input type=\"submit\" value=\"Odeslat\"> </center> </form> </div class ='tlacitko'>";  
             
                 if(!isset($_COOKIE["level9Auth"])){
                   $cas = time() + (84600 * 30);
@@ -37,7 +43,22 @@
 
             if (isset($_POST["password"]) && isset($_COOKIE["level9Auth"]) && $_COOKIE["level9Auth"] == "true")
             {
-              echo "<b>Gratuluji Dokončil jsi úkol 9.<b>";
+              ob_end_clean(); echo "
+              <div class='confetti'>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <h2>Gratuluji Dokončil jsi úkol 9.</h2>";
               $link = mysqli_connect('localhost', 'nov', 'Ondra2580,', 'HackThisPrumka');
 
           if (!$link) {
@@ -69,11 +90,11 @@
                   }
                   else
                   {
-                    echo "Už si úkol dokončil.";
+                    echo "Už jsi úkol dokončil.";
                   }
                 }
                 else{
-                  echo "Už si úkol dokončil.";
+                  echo "Už jsi úkol dokončil.";
                 }
               }
             }
@@ -100,7 +121,10 @@
             }
             if(isset($_POST["password"]) && isset($_COOKIE["level9Auth"]) && $_COOKIE["level9Auth"] == "false")
             {
-                echo "nemáš přístup k těmto souborům";
+                echo "<div class='error'>
+                <div class='close' onclick='this.parentElement.remove()''>X</div>
+                <i class='ico'>&#9747;</i> K těmto souborům nemáš přístup!
+              </div>";
             }
 
                 ?>

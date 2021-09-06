@@ -7,7 +7,8 @@
     <meta name='keywords' content='Quest'>
     <meta name='author' content='Ondřej Novotný'>
     <meta name='robots' content='all'>
-    <link rel="style" href="style.css">
+    <link rel="stylesheet" href="index.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="style.css">
     <!-- <meta http-equiv='X-UA-Compatible' content='IE=edge'> -->
     <link href='/favicon.png' rel='shortcut icon' type='image/png'>
   </head>
@@ -22,30 +23,54 @@
     if(!isset($_POST["password"])){
       $_SESSION["cas2"] = date("His");
     }
-            $cislo = rand(1, 5);
+            $cislo = rand(1, 7);
             if($cislo == 1){
-                echo "Ta naše průmka je úžasná.";
+              ob_start(); echo " <center> <div class='nadpis'> <h1>  Ta naše průmka je ale úžasná, že? </h1> </div>";
             }
             if($cislo == 2){
-                echo "Ten web té naší průmky je krásnej.";
+              ob_start(); echo " <center> <div class='nadpis'> <h1>  Ten web té naší průmky je krásnej. </h1> </div>";
             }
             if($cislo == 3){
-                echo "Ještě že má ta naše průmka tak skvělé vybavení.";
+              ob_start(); echo " <center> <div class='nadpis'> <h1>  Ještě že má ta naše výběrová škola tak skvělé vybavení. </h1> </div>";
             }
             if($cislo == 4){
-                echo "Kéž by každá škola byla jako naše průmka.";
+              ob_start(); echo " <center> <div class='nadpis'> <h1>  Kéž by každá škola byla elita Šumperka jako naše průmka. </h1> </div>";
             }
             if($cislo == 5){
-                echo "Průmka je život.";
+              ob_start(); echo " <center> <div class='nadpis'> <h1>  Průmka je život. </h1> </div>";
             }
 
-            echo "<br/><br/><b>Heslo:</b> <br><form action=\"/HackThisPrumka/Quest10/index.php\" method=\"post\">
-                <input type=\"password\" name=\"password\" value = \"\"><br><br>
-                <input type=\"submit\" value=\"Odeslat\"></form>"; 
+            if($cislo == 6){
+              ob_start(); echo " <center> <div class='nadpis'> <h1>  Tolik báječných učitelů tu je. </h1> </div>";
+            }
+
+            if($cislo == 7){
+              ob_start(); echo " <center> <div class='nadpis'> <h1>  Kdo by nechtěl studovat na prestižní škole, jako je Průmka </h1> </div>";
+            }
+
+            ob_start(); echo " <div class='psani'> <h1>PŘIHLÁŠENÍ </h1> </div> <br><form action=\"/HackThisPrumka/Quest10/index.php\" method=\"post\">
+            <div class ='jmeno'> <label for='jmeno'> Jméno:</label> <br> <input type=\"text\" name=\"jmeno\" value = \"Admin\" placeholder=\"Jméno\"><br><br> </div class='jmeno'> 
+            <div class ='heslo'> <label for='password'> Heslo:</label> <br> <input type=\"password\" name=\"password\" value = \"\" placeholder=\"Heslo\"><br><br> </div class='heslo'>
+            <div class='tlacitko'> <center> <input type=\"submit\" value=\"Odeslat\"> </center> </form> </div class ='tlacitko'>"; 
 
             if (isset($_POST["password"]) && $_POST["password"] == "ale není tady!")
             {
-              echo "<b>Gratuluji Dokončil jsi úkol 10.<b>";
+              ob_end_clean(); echo "
+              <div class='confetti'>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <div class='confetti-piece'></div>
+              <h2>Gratuluji Dokončil jsi úkol 10.</h2>";
               $link = mysqli_connect('localhost', 'nov', 'Ondra2580,', 'HackThisPrumka');
 
           if (!$link) {
@@ -77,11 +102,11 @@
                   }
                   else
                   {
-                    echo "Už si úkol dokončil.";
+                    echo "Už jsi úkol dokončil.";
                   }
                 }
                 else{
-                  echo "Už si úkol dokončil.";
+                  echo "Už jsi úkol dokončil.";
                 }
               }
             }
@@ -109,5 +134,9 @@
             
 
         ?>
+        <footer>
+          
+          <img src="../obrazky/boha1.png" width="500">
+          </footer>
     </body>
 </html>
