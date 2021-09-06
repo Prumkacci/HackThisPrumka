@@ -25,10 +25,12 @@ $link = mysqli_connect('localhost', 'nov', 'Ondra2580,', 'HackThisPrumka');
                       
                     }
                   }
+                  if(mysqli_num_rows($vysledek)<0){
                   for($i = 1; $i <= 10; $i++)
                       {
                             echo"<br/><a href=Quest$i>Basic $i</a>";
                       }  
+                    }
                 }
 /*if(isset($_SESSION['username'])){
     echo"<br/><a href=Quest1>Basic 1</a>

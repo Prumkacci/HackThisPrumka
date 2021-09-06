@@ -12,12 +12,19 @@
     <link href='/favicon.png' rel='shortcut icon' type='image/png'>
   </head>
     <body>
+        <strong><center>HackThisPrumka</center></strong>
         <?php
-        include "header.php";  
-        include "prihlaseni.php"; 
-        include "levely.php";
-
-        include "footer.php";
+        session_name("users"); 
+        session_start(); 
+        if(isset($_SESSION["username"]))
+        {
+          echo "Přihlášen jako: <a href='index.php'>" . $_SESSION["username"] . "</a> | <a href='logout.php'>Odhlásit se</a>" ;
+          include "levely.php";
+        }
+        else
+        {
+          include "prihlaseni.php";
+        } 
 ?>
     </body>
 </html>
