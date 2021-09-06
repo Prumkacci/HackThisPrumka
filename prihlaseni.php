@@ -1,24 +1,32 @@
 <?php
-$title="Přihlášení"; 
-?> 
-
-<p style="font-weight:bold; font-size:16px">Přihlášení</p> <br>  
-
-<form action="login.php" method="POST">   
-<table style="font-size:12px">    
-<tr><td>Username: </td><td><input type="text" name="username"></td></tr> 
-<tr><td>Heslo: </td><td><input type="password" name="password"></td></tr>     
-<tr><td colspan="2" align="right"><input type="submit" name="submit" value="Přihlásit"></td></tr> 
-</table> 
-</form> 
-    <?php   
-  if(isset($_SESSION['username'])){     
-  echo "Přihlášen: ".$_SESSION['username']."<br><a href='logout.php'>Odhlásit</a>";
-  header ("location:user.php");   
-  }
-  else{
+require_once 'Google OAuth/vendor/autoload.php';
   
-      
-  }
-
+// init configuration
+$clientID = '559254668012-5bk8ke9l6q7doqd4u9qe11o926j83f8o.apps.googleusercontent.com';
+$clientSecret = 'V7mssjrOvdKmBAQ2EfZQBKq6';
+$redirectUri = 'http://localhost/HackThisPrumka/prihlaseni.php';
+   
+// create Client Request to access Google API
+$client = new Google_Client();
+$client->setClientId($clientID);
+$client->setClientSecret($clientSecret);
+$client->setRedirectUri($redirectUri);
+$client->addScope("email");
+$client->addScope("profile");
+  
+// authenticate code from Google OAuth Flow
+if (isset($_GET['code'])) {
+  $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
+  $client->setAccessToken($token['access_token']);
+   
+  // get profile info
+  $google_oauth = new Google_Service_Oauth2($client);
+  $google_account_info = $google_oauth->userinfo->get();
+  $email =  $google_account_info->email;
+  $name =  $google_account_info->name;
+  
+  // now you can use this profile info to create account in your website and make user logged in.
+} else {
+  echo "<a href='".$client->createAuthUrl()."'>Google Login</a>";
+}
 ?>

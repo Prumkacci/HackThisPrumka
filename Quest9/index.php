@@ -121,10 +121,21 @@ ob_start(); echo "<center> <div class='nadpis'> <h1>Bezpečný Jarda zvolil zcel
             }
             if(isset($_POST["password"]) && isset($_COOKIE["level9Auth"]) && $_COOKIE["level9Auth"] == "false")
             {
-                echo "<div class='error'>
-                <div class='close' onclick='this.parentElement.remove()''>X</div>
-                <i class='ico'>&#9747;</i> K těmto souborům nemáš přístup!
-              </div>";
+                echo "<div id='InfoBanner' style=''>
+              
+                <span class='reversed reversedRight'>
+                  <span>
+                    &#9888;
+                  </span>
+                </span>
+                <span class='reversed reversedLeft'>
+
+                  K těmto souborům nemáš přístup!
+                </span> 
+              </div>
+              
+
+";
             }
 
                 ?>

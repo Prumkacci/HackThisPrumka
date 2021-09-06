@@ -12,21 +12,12 @@
     <link href='/favicon.png' rel='shortcut icon' type='image/png'>
   </head>
     <body>
-            <?php
-include "mysqli_connect.php";
-include "header.php";
-  if(isset($_SESSION['username'])){     
-  echo "Přihlášen: ".$_SESSION['username']."/<a href='logout.php'>Odhlásit</a>";
-  header ("location:user.php");   
-  }
-  else{
-    include "prihlaseni.php";
-      echo "
-      <a class='reg_a' href='registrace.php'>Zaregistruj se</a>"; 
-  }
-  include "levely.php";
+        <?php
+        include "header.php";  
+        include "prihlaseni.php"; 
+        include "levely.php";
 
-include "footer.php";
+        include "footer.php";
 ?>
     </body>
 </html>
