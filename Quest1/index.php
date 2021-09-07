@@ -116,15 +116,40 @@ date_default_timezone_set('UTC');
                       $sql = 'UPDATE ukoly SET Basic1 = ' .$casik. ' WHERE ID = ' . $Value->ID;
                       if(mysqli_query($link,$sql))
                       {
-                        echo "Postup Uložen.";
+                        echo "<center>Postup Uložen.</center>";
+                        echo " <div class='tlacitkoz'> <center> <div class='formz'> <form method='POST' action='../index.php'> <input type=\"submit\" value=\"Vrátit zpět\"> </center> </form> </div> </div class ='tlacitko'>";
                       }
                       else
                       {
-                        echo "Už si úkol dokončil.";
+                        echo "<div id='InfoBanner' style=''>
+              
+                <span class='reversed reversedRight'>
+                  <span>
+                    &#8505;
+                  </span>
+                </span>
+                <span class='reversed reversedLeft'>
+
+                  K těmto souborům nemáš přístup!
+                </span> 
+              </div>";
+                        echo " <div class='tlacitkoz'> <center> <div class='formz'> <form method='POST' action='../index.php'> <input type=\"submit\" value=\"Vrátit zpět\"> </center> </form> </div> </div class ='tlacitko'>";
                       }
                     }
                     else{
-                      echo "Už si úkol dokončil.";
+                      echo "<div id='InfoBanner' style=''>
+              
+                <span class='reversed reversedRight'>
+                  <span>
+                  &#8505;
+                  </span>
+                </span>
+                <span class='reversed reversedLeft'>
+
+                  Tento úkol jsi již dokončil.
+                </span> 
+              </div>";
+                      echo " <div class='tlacitkoz'> <center> <div class='formz'> <form method='POST' action='../index.php'> <input type=\"submit\" value=\"Vrátit zpět\"> </center> </form> </div> </div class ='tlacitko'>";
                     }
                   }
                 }
@@ -140,11 +165,16 @@ date_default_timezone_set('UTC');
                   $sql = "INSERT INTO ukoly (username, Basic1) VALUES ('$uzivatel', $casik)";
                 if(mysqli_query($link,$sql))
                 {
-                  echo "Postup Uložen.";
+                  echo "<center>Postup Uložen.</center>";
+                  echo " <div class='tlacitkoz'> <center> <div class='formz'> <form method='POST' action='../index.php'> <input type=\"submit\" value=\"Vrátit zpět\"> </center> </form> </div> </div class ='tlacitko'>";
                 }
-                else
+                  else
                 {
                   echo mysqli_error($link);
+                  echo "<form method='POST' action='../index.php'>  
+                                <input type='submit'/>  
+                            </form>";
+
                 }
               }
             }

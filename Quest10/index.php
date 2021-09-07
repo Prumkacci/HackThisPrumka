@@ -98,15 +98,18 @@
                   $sql = 'UPDATE ukoly SET Basic10 = ' .$casik. ' WHERE ID = ' . $Value->ID;
                   if(mysqli_query($link,$sql))
                   {
-                    echo "Postup Uložen.";
+                    echo "<center>Postup Uložen.</center>";
+                    echo " <div class='tlacitkoz'> <center> <div class='formz'> <form method='POST' action='../index.php'> <input type=\"submit\" value=\"Vrátit zpět\"> </center> </form> </div> </div class ='tlacitko'>";
                   }
                   else
                   {
-                    echo "Už jsi úkol dokončil.";
+                    echo "<center>Tento úkol jsi již dokončil.</center>";
+                    echo " <div class='tlacitkoz'> <center> <div class='formz'> <form method='POST' action='../index.php'> <input type=\"submit\" value=\"Vrátit zpět\"> </center> </form> </div> </div class ='tlacitko'>";
                   }
                 }
                 else{
-                  echo "Už jsi úkol dokončil.";
+                  echo "<center>Tento úkol jsi již dokončil.</center>";
+                  echo " <div class='tlacitkoz'> <center> <div class='formz'> <form method='POST' action='../index.php'> <input type=\"submit\" value=\"Vrátit zpět\"> </center> </form> </div> </div class ='tlacitko'>";
                 }
               }
             }
@@ -122,7 +125,8 @@
               $sql = "INSERT INTO ukoly (username, Basic10) VALUES ('$uzivatel', $casik)";
             if(mysqli_query($link,$sql))
             {
-              echo "Postup Uložen.";
+              echo "<center>Postup Uložen.</center>"
+              echo " <div class='tlacitkoz'> <center> <div class='formz'> <form method='POST' action='../index.php'> <input type=\"submit\" value=\"Vrátit zpět\"> </center> </form> </div> </div class ='tlacitko'>";
             }
             else
             {

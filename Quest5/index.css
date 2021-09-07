@@ -422,3 +422,28 @@ font-family: arial black;
 
 
 }
+
+
+.tlacitkoz input{
+  
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #000000;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.tlacitkoz input:hover {
+  background: #757575;
+  text-decoration: none;
+}
+
+
+.formz {
+
+padding-left: 46%;
+
+}

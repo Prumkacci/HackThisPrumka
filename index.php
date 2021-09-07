@@ -26,5 +26,9 @@
           include "prihlaseni.php";
         } 
 ?>
+
+      <footer>
+      © Ondřej
+      </footer>
     </body>
 </html>

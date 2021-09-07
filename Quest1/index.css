@@ -215,8 +215,8 @@ a {
 .confetti {
   display: flex;
   justify-content: center;
-  align-items: center;
-  position: absolute;
+  
+  
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -372,3 +372,142 @@ font-family: arial black;
 
 }
 
+.tlacitkoz input{
+  
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #000000;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-top: 30px;
+}
+
+.tlacitkoz input:hover {
+  background: #757575;
+  text-decoration: none;
+}
+
+
+.formz {
+
+padding-left: 46%;
+padding-bottom: 100px;
+}
+
+
+
+@keyframes slide {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -120px 60px;
+  }
+}
+
+#InfoBanner{
+  
+  position: absolute;
+  left: -15px;
+  font-family: arial black;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.reversed {
+  display: inline-block;
+  padding: 0.3em;
+  padding-left: 0.3em;
+  margin-left: 0.8em;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1;
+  color: #fff;
+  font-size: 15px;
+  background-color:#0aacdd;
+}
+.reversed:before, .reversed:after {
+  content: '';
+  width: 0;
+  height: 0;
+  right: -0.8em;
+  position: absolute;
+  top: 0;
+  border-top: 0.8em solid #0aacdd
+}
+.reversed:after {
+  top: auto;
+  bottom: 0;
+  border-top: none;
+  border-bottom: 0.8em solid #0aacdd;
+}
+.reversedRight:before, .reversedRight:after{
+  border-right: 0.8em solid transparent;
+  right: -0.8em;
+}
+.reversedRight{
+  width: 17px;
+  border-radius: 5px 0px 0px 5px;
+  animation: tilt 2s infinite;
+}
+@keyframes tilt {
+  0% {
+    left: 0%;
+  }
+  50% {
+    left: 9px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+.reversedLeft{
+  margin-left:15px;
+  border-radius: 0px 5px 5px 0px;
+padding-right: 20px;
+}
+.reversedLeft:before, .reversedLeft:after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 0.8em solid transparent;
+  left: -0.8em;
+  position: absolute;
+}
+.reversedLeft:after {
+  top: auto;
+  bottom: 0;
+  border-top: 0.8em solid #0aacdd;
+  border-bottom: none;
+}
+.reversedLeft:before {
+  bottom: auto;
+  top:0;
+  border-bottom: 0.8em solid #0aacdd;
+  border-top: none;
+}
+
+.bgAnimation{
+  background-color:#0aacdd;
+  background-image: linear-gradient(
+    45deg,
+    #73a4e5 25%,
+    transparent 25%,
+    transparent 75%,
+    #1a77f0 75%,
+    #1a77f0
+  ),linear-gradient(
+    -45deg,
+    #1a77f0 25%,
+    transparent 25%,
+    transparent 75%,
+    #1a77f0 75%,
+    #1a77f0
+  );
+  background-size: 60px 60px;
+  animation: slide 4s infinite linear;
+}

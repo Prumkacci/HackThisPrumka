@@ -86,15 +86,18 @@ ob_start(); echo "<center> <div class='nadpis'> <h1>Bezpečný Jarda zvolil zcel
                   $sql = 'UPDATE ukoly SET Basic9 = ' .$casik. ' WHERE ID = ' . $Value->ID;
                   if(mysqli_query($link,$sql))
                   {
-                    echo "Postup Uložen.";
+                    echo "<center>Postup Uložen.</center>";
+                    echo " <div class='tlacitkoz'> <center> <div class='formz'> <form method='POST' action='../index.php'> <input type=\"submit\" value=\"Vrátit zpět\"> </center> </form> </div> </div class ='tlacitko'>";
                   }
                   else
                   {
-                    echo "Už jsi úkol dokončil.";
+                    echo "<center>Tento úkol jsi již dokončil.</center>";
+                    echo " <div class='tlacitkoz'> <center> <div class='formz'> <form method='POST' action='../index.php'> <input type=\"submit\" value=\"Vrátit zpět\"> </center> </form> </div> </div class ='tlacitko'>";
                   }
                 }
                 else{
-                  echo "Už jsi úkol dokončil.";
+                  echo "<center>Tento úkol jsi již dokončil.</center>";
+                  echo " <div class='tlacitkoz'> <center> <div class='formz'> <form method='POST' action='../index.php'> <input type=\"submit\" value=\"Vrátit zpět\"> </center> </form> </div> </div class ='tlacitko'>";
                 }
               }
             }
@@ -110,7 +113,8 @@ ob_start(); echo "<center> <div class='nadpis'> <h1>Bezpečný Jarda zvolil zcel
               $sql = "INSERT INTO ukoly (username, Basic9) VALUES ('$uzivatel', $casik)";
             if(mysqli_query($link,$sql))
             {
-              echo "Postup Uložen.";
+              echo "<center>Postup Uložen.</center>";
+              echo " <div class='tlacitkoz'> <center> <div class='formz'> <form method='POST' action='../index.php'> <input type=\"submit\" value=\"Vrátit zpět\"> </center> </form> </div> </div class ='tlacitko'>";
             }
             else
             {
@@ -125,7 +129,7 @@ ob_start(); echo "<center> <div class='nadpis'> <h1>Bezpečný Jarda zvolil zcel
               
                 <span class='reversed reversedRight'>
                   <span>
-                    &#9888;
+                    &#8505;
                   </span>
                 </span>
                 <span class='reversed reversedLeft'>
@@ -133,12 +137,16 @@ ob_start(); echo "<center> <div class='nadpis'> <h1>Bezpečný Jarda zvolil zcel
                   K těmto souborům nemáš přístup!
                 </span> 
               </div>
+
+              
               
 
 ";
             }
 
                 ?>
+
+                
         </center>
     </body>
 </html>

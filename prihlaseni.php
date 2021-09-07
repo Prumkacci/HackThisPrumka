@@ -5,7 +5,7 @@ session_start();
 // init configuration
 $clientID = '559254668012-5bk8ke9l6q7doqd4u9qe11o926j83f8o.apps.googleusercontent.com';
 $clientSecret = 'V7mssjrOvdKmBAQ2EfZQBKq6';
-$redirectUri = 'http://127.0.0.1/HackThisPrumka/prihlaseni.php';
+$redirectUri = 'http://localhost/HackThisPrumka/prihlaseni.php';
    
 // create Client Request to access Google API
 $client = new Google_Client();
