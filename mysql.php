@@ -3,7 +3,7 @@
 session_name("users"); 
 session_start(); 
 
-$link = mysqli_connect('localhost', 'nov', 'MYSQLHESLO', 'HackThisPrumka');
+$link = mysqli_connect('localhost', 'nov', 'MYSQLHESLO :)', 'HackThisPrumka');
 
 if (!$link) {
     echo "Chyba při připijení do db";
